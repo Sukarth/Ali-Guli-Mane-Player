@@ -1,0 +1,45 @@
+{
+  "name": "alu-guli-mane-player",
+  "version": "1.0.0",
+  "description": "the player or client that connects to the alu guli mane server to play the game",
+  "main": "multiplayer.js",
+  "dependencies": {
+    "accepts": "^1.3.8",
+    "base64id": "^2.0.0",
+    "cookie": "^0.4.2",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "engine.io": "^6.5.3",
+    "engine.io-parser": "^5.2.1",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35",
+    "ms": "^2.1.2",
+    "negotiator": "^0.6.3",
+    "object-assign": "^4.1.1",
+    "socket.io": "^4.7.2",
+    "socket.io-adapter": "^2.5.2",
+    "socket.io-parser": "^4.2.4",
+    "vary": "^1.1.2",
+    "ws": "^8.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sukarth/Alu-Guli-Mane-Player.git"
+  },
+  "keywords": [
+    "player",
+    "client",
+    "alu",
+    "guli",
+    "mane"
+  ],
+  "author": "Sukarth Acharya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sukarth/Alu-Guli-Mane-Player/issues"
+  },
+  "homepage": "https://github.com/Sukarth/Alu-Guli-Mane-Player#readme"
+}

@@ -1,0 +1,21 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+.position-relative{
+    height: 100%;
+}
+
+#header1{
+    padding-bottom: 10%;
+    font-size:xxx-large;
+}
