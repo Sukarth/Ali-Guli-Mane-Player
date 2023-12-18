@@ -33,6 +33,7 @@ html, body
     width: 100%;
     height: 100%;
     margin: auto;  
+    /* z-index: 2; */
 
 }
 
@@ -96,8 +97,8 @@ html, body
 }
 
 
-#flexbox-container1 div {
-    min-width: 0;
+.d {
+    /* min-width: 0;
     min-height: 0;
     max-width: max-content;
     max-height: max-content;
@@ -107,10 +108,99 @@ html, body
     padding-left: 2%;
     padding-right: 1%;
     align-self: center;
-    /* display: block; */
+    -->display: block; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding-left: 2%;
+    padding-right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
+#divCircle14, #divCircle13, #divCircle12, #divCircle11, #divCircle10, #divCircle9, #divCircle8 {
+    /* min-width: 0;
+    min-height: 0;
+    max-width: max-content;
+    max-height: max-content;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding-left: 2%;
+    padding-right: 1%;
+    align-self: center;
+    -->display: block; */
 
+
+    /* width: 75%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    position: absolute; */
+
+
+
+    width: 75%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+#divCircle1, #divCircle2, #divCircle3, #divCircle4, #divCircle5, #divCircle6, #divCircle7, #divCircle8 {
+    /* min-width: 0;
+    min-height: 0;
+    max-width: max-content;
+    max-height: max-content;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding-left: 2%;
+    padding-right: 1%;
+    align-self: center;
+    -->display: block; */
+
+
+    /* width: 75%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    position: absolute; */
+
+
+
+    width: 75%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.rtryd {
+    /* min-width: 0;
+    min-height: 0;
+    max-width: max-content;
+    max-height: max-content;
+    flex-grow: 1; */
+    display: block;
+    aspect-ratio: 1/1;
+    width: 15%;
+    flex-shrink: 1;
+    margin-right: 5px;
+    margin-top: 2px;
+    
+    /* flex-basis: 0; */
+}
 
 
 #flexbox-container2{
@@ -127,7 +217,7 @@ html, body
     transform: translate(-50%, 13%);
 }
 
-#flexbox-container2 div {
+/* #flexbox-container2 div {
     min-width: 0;
     min-height: 0;
     max-width: max-content;
@@ -138,11 +228,85 @@ html, body
     padding-left: 2%;
     padding-right: 1%;
     align-self: center;
-    /* display: block; */
+    ------------display: block;
+} */
+
+/* #Gamestatus{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 13%);
+    z-index: 1;
+    position: absolute;
+} */
+
+
+#condftainer {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 20%;
+    display: flex; 
+    justify-content: center; 
+    /* align-items: center; */
+    flex-direction: column;
+    background-color: bisque;
+}
+
+#condftainer > svg{
+    /* min-width: max-content;
+    min-height: max-content;
+    max-width: max-content;
+    max-height: max-content; */
+    flex-grow: 1;
+    flex-shrink: 10;
+    flex-basis: 0;
+    margin: 0;
+	/* padding: 0px; */
+    visibility: visible;
+    /* font-size:100px; */
+    min-width: 0;
+    min-height: 0;
+    /* height: 2px;
+    width: 10px; */
+    /* max-width: max-content; */
+    max-height: max-content;
+    display: block;
+    width:100%;
+    
 }
 
 
+.t{
+    height: 100%;
+    width:100%;
+    font-size: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
 
+/* #Gamestatus {
+    width: 100%;
+    left: 50%;
+} */
+
+
+
+@media (max-height: 868px) {
+    #condftainer {
+        height: 25%;
+        /* width: 175%; */
+    }
+}
+
+@media (max-height: 576px) {
+    #condftainer {
+        height: 15%;
+        /* width:15%; */
+    }
+}
 
 .d {
     padding-left: 1% !important; 

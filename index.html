@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Stylesheets/multiplayer.css">
-    
+    <!-- <script src="FitText.js"></script>
+    <script>
+        window.fitText( document.getElementById("responsive_headline") );
+    </script> -->
     <title>Document</title>
 </head>
 <body>
+<!-- <body onresize="fontfitter()"> -->
     <!-- <center class="hii"> -->
         
          <!-- <div id="container"> -->
@@ -23,62 +27,76 @@
         <!-- <div class="dddd"> -->
 
             <div id="flexbox-container1" >
-                <div onclick="someFunction(this)" class="d">
+                <div  class="d">
                     <img id="circle14" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle14"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle13" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle13"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle12" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle12"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle11" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle11"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle10" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle10"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle9" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle9"></div>
                 </div>
                 
-                <div onclick="someFunction(this)">
+                <div  class="d">
                     <img id="circle8" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle8"></div>
                 </div>
             </div>
 
             <div id="flexbox-container2" >
                 <div onclick="someFunction(this)" class="d">
-                <img id="circle1" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <img id="circle1" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle1"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle2" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle2"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle3" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle3"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle4" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle4"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle5" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle5"></div>
                 </div>
 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle6" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle6"></div>
                 </div>
                 
-                <div onclick="someFunction(this)">
+                <div onclick="someFunction(this)" class="d">
                     <img id="circle7" draggable="false" class="circle" src="/Assets/circle full.png" alt="">
+                    <div id="divCircle7"></div>
                 </div>
             </div>
         <!-- </div> -->
@@ -86,10 +104,19 @@
         <!-- </div>    -->
                 <!-- <img id="circle" class="circle" src="/Assets/circle full.png" alt=""> -->
             
-            <center>
-                <h1 id="Player1"></h1>
-                <h1 id="Player2"></h1>
-                <h1 id="Gamestatus"></h1>
+            <center id="condftainer">
+                <svg id="Player1">
+                    <text class="t" x="0" y="50"> </text>
+                </svg>
+                <svg id="Player2">
+                    <text class="t" x="0" y="50"> </text>
+                </svg>
+                <svg id="Gamestatus">
+                    <text class="t" x="0" y="50"> </text>
+                </svg>
+                <!-- <span id="Player1"></span>
+                <span id="Player2"></span>
+                <span id="Gamestatus"></span> -->
             </center>  
 
 <div id="rematchdiv"><button onclick="rematch()" id="rematch">Rematch?</button></div>
@@ -97,7 +124,7 @@
        
 
 <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
-<script src="https://server.sukarthacharya1.repl.co/socket.io/socket.io.js"></script>
+<script src="https://v9djdb27-3000.euw.devtunnels.ms/socket.io/socket.io.js"></script>
 <script src="multiplayer.js"></script>
 
 </body>
