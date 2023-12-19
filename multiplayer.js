@@ -624,9 +624,14 @@ socket.on("gameState", function(state) {
   console.log(state)
   console.log(state.slotBoard)
   console.log(slotsValues)
-  if (state.flippedPlayer.id == socket.id ) {
-    playerIsFlipped = true
+  try {
+    if (state.flippedPlayer.id == socket.id) {
+      playerIsFlipped = true
+    }
+  } catch (error) {
+    hi = 0
   }
+  
   // slotsValues = state.slotBoard
   // for (let index = 0; index < state.board.length; index++) {
   //   const player = state.board[index];
@@ -741,10 +746,12 @@ socket.on("gameState", function(state) {
   document.getElementById("Player2").children[0].innerHTML = " ";
   if (state.players.length > 0) {
     document.getElementById("Player1").children[0].innerHTML = "Player 1: " + state.players[0].playerName;
+    document.getElementById("Player1Gems").children[0].innerHTML = 'Player 1 Gems: ' + state.players[0].numberOfGems;
   }
 
   if (state.players.length > 1) {
     document.getElementById("Player2").children[0].innerHTML = "Player 2: " + state.players[1].playerName;
+    document.getElementById("Player2Gems").children[0].innerHTML = 'Player 2 Gems: ' + state.players[1].numberOfGems;
   }
 
 
