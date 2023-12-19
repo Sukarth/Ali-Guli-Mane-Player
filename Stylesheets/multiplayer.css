@@ -120,6 +120,29 @@ html, body
     position: relative;
 }
 
+.dd {
+    /* min-width: 0;
+    min-height: 0;
+    max-width: max-content;
+    max-height: max-content;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding-left: 2%;
+    padding-right: 1%;
+    align-self: center;
+    -->display: block; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    padding-left: 2%;
+    padding-right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 #divCircle14, #divCircle13, #divCircle12, #divCircle11, #divCircle10, #divCircle9, #divCircle8 {
     /* min-width: 0;
     min-height: 0;
@@ -292,7 +315,7 @@ html, body
     justify-content: center; 
     /* align-items: center; */
     flex-direction: column;
-    background-color: bisque;
+    background-color: brown;
 }
 
 #condftainer2 > svg{
@@ -350,6 +373,9 @@ html, body
 }
 
 .d {
+    padding-left: 1% !important; 
+}
+.dd {
     padding-left: 1% !important; 
 }
 

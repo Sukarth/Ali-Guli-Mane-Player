@@ -1,6 +1,6 @@
 var socket = io("https://v9djdb27-3000.euw.devtunnels.ms/");
 
-var playerIsFlipped;
+// var playerIsFlipped;
 var chosen_circlee;
 // window.addEventListener("resize", fontfitter);
 
@@ -390,20 +390,20 @@ function someFunction(div) {
     //   var sdsdsdkl = Number(circle_clicked_num) - 1 - 7
     // }
 
-    if (playerIsFlipped == true) {
-      if (Number(circle_clicked_num) >= 1 && Number(circle_clicked_num) <= 7) {
-        chosen_circlee = Number(circle_clicked_num) +7
-      }
-      else if (Number(circle_clicked_num) >= 7 && Number(circle_clicked_num) <= 14) {
-        chosen_circlee = Number(circle_clicked_num) -7
-      }
-      console.log(chosen_circlee)
-      console.log("chosen_circlee")
-    }
-    else {
+    // if (playerIsFlipped == true) {
+    //   if (Number(circle_clicked_num) >= 1 && Number(circle_clicked_num) <= 7) {
+    //     chosen_circlee = Number(circle_clicked_num) +7
+    //   }
+    //   else if (Number(circle_clicked_num) >= 7 && Number(circle_clicked_num) <= 14) {
+    //     chosen_circlee = Number(circle_clicked_num) -7
+    //   }
+    //   console.log(chosen_circlee)
+    //   console.log("chosen_circlee")
+    // }
+    // else {
       chosen_circlee = circle_clicked_num
       console.log(chosen_circlee)
-    }
+    // }
 
     socket.emit("action", {
       // gridIndex: [Number(circle_clicked_num) - 1, sdsdsdkl],
@@ -624,14 +624,50 @@ socket.on("gameState", function(state) {
   console.log(state)
   console.log(state.slotBoard)
   console.log(slotsValues)
+  // try {
+    // if (state.flippedPlayer.id == socket.id) {
+    //   playerIsFlipped = true
+    // }
+  // } catch (error) {
+  //   hi = 0
+  // }
+
   try {
+
     if (state.flippedPlayer.id == socket.id) {
-      playerIsFlipped = true
+      var elements = document.getElementsByClassName("d");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].parentElement.style.background = "brown";
+        elements[i].addEventListener("click", function() {
+      console.log("KKR")
+          someFunction(this);
+        });
+      }
+
+
+      var elements = document.getElementsByClassName("dd");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].parentElement.style.background = "beige";
+      }
+
+    } else {
+      var elements = document.getElementsByClassName("dd");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].parentElement.style.background = "beige";
+        elements[i].addEventListener("click", function() {
+          console.log("OP")
+          someFunction(this);
+        });
+      }
+
+      var elements = document.getElementsByClassName("d");
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].parentElement.style.background = "brown";
+      }
+
     }
-  } catch (error) {
-    hi = 0
-  }
-  
+
+  } catch (e) {}  
   // slotsValues = state.slotBoard
   // for (let index = 0; index < state.board.length; index++) {
   //   const player = state.board[index];
@@ -654,54 +690,54 @@ socket.on("gameState", function(state) {
   console.log(state.players.length)
   
   if (state.players.length == 2) {
-    if (state.flippedPlayer.id == socket.id && state.currentPlayer == socket.id){
-      for (var key in state.slotBoard) {
-        var numericKey = parseInt(key);
-        if (numericKey == 7) {
-          slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
-        }
-        else if (numericKey == 14) {
-          slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
-        }
-        else if (numericKey < 7) {
-          slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
-        } else if (numericKey > 7) {
-          slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
-        }
-        // else {
-        //   slotsValues[key] = state.slotBoard[key];
-        // }
-      }
-      console.log(slotsValues)
-      let sum = Object.values(slotsValues).reduce((acc, val) => acc + parseInt(val), 0);
+    // if (state.flippedPlayer.id == socket.id && state.currentPlayer == socket.id){
+    //   for (var key in state.slotBoard) {
+    //     var numericKey = parseInt(key);
+    //     if (numericKey == 7) {
+    //       slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
+    //     }
+    //     else if (numericKey == 14) {
+    //       slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
+    //     }
+    //     else if (numericKey < 7) {
+    //       slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
+    //     } else if (numericKey > 7) {
+    //       slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
+    //     }
+    //     // else {
+    //     //   slotsValues[key] = state.slotBoard[key];
+    //     // }
+    //   }
+    //   console.log(slotsValues)
+    //   let sum = Object.values(slotsValues).reduce((acc, val) => acc + parseInt(val), 0);
 
-      console.log("Sum of values:", sum);
-    }
-    else if (state.flippedPlayer.id != socket.id && state.currentPlayer != socket.id) {
-      for (var key in state.slotBoard) {
-        var numericKey = parseInt(key);
-        if (numericKey == 7) {
-          slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
-        }
-        else if (numericKey == 14) {
-          slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
-        }
-        else if (numericKey < 7) {
-          slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
-        } else if (numericKey > 7) {
-          slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
-        }
-        // else {
-        //   slotsValues[key] = state.slotBoard[key];
-        // }
-      }
-      console.log(slotsValues)
-      let sum = Object.values(slotsValues).reduce((acc, val) => acc + parseInt(val), 0);
+    //   console.log("Sum of values:", sum);
+    // }
+    // else if (state.flippedPlayer.id != socket.id && state.currentPlayer != socket.id) {
+    //   for (var key in state.slotBoard) {
+    //     var numericKey = parseInt(key);
+    //     if (numericKey == 7) {
+    //       slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
+    //     }
+    //     else if (numericKey == 14) {
+    //       slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
+    //     }
+    //     else if (numericKey < 7) {
+    //       slotsValues[(numericKey + 7).toString()] = state.slotBoard[key];
+    //     } else if (numericKey > 7) {
+    //       slotsValues[(numericKey - 7).toString()] = state.slotBoard[key];
+    //     }
+    //     // else {
+    //     //   slotsValues[key] = state.slotBoard[key];
+    //     // }
+    //   }
+    //   console.log(slotsValues)
+    //   let sum = Object.values(slotsValues).reduce((acc, val) => acc + parseInt(val), 0);
 
-      console.log("Sum of values:", sum);
-    }
+    //   console.log("Sum of values:", sum);
+    // }
 
-    else if (state.flippedPlayer.id == socket.id && state.currentPlayer != socket.id){
+    // else if (state.flippedPlayer.id == socket.id && state.currentPlayer != socket.id){
       for (var key in state.slotBoard) {
         slotsValues[key] = state.slotBoard[key];
       }
@@ -709,7 +745,7 @@ socket.on("gameState", function(state) {
       let sum = Object.values(slotsValues).reduce((acc, val) => acc + parseInt(val), 0);
 
       console.log("Sum of values:", sum);
-    }
+    // }
   }
 
 
