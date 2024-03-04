@@ -1,60 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-        <title>Bootstrap Example</title>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
-    <body>
-        
-        <div class="position-relative">
-                
-            <div class="btn-group-vertical position-absolute top-50 start-50 translate-middle" role="group" aria-label="Vertical button group">
-                <center><h1 id="header1" class="text-center">Play Ali Guli Mane</h1></center>
-                <button type="button" id="singleplayerBtn" class="btn btn-primary btn-lg">Single player
-                    <!-- <img src="https://cdn-icons-png.flaticon.com/128/9743/9743387.png" alt="single player icon" border="0" /> -->
-                </button>
-                <button type="button" id="multiplayerBtn" class="btn btn-primary btn-lg">Multiplayer</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Stylesheets/multiplayer.css">
+    <!-- <script src="FitText.js"></script>
+    <script>
+        window.fitText( document.getElementById("responsive_headline") );
+    </script> -->
+    <title>Alu Guli Mane Game</title>
+</head>
+<body>
+
+    <!-- <div id="gameStatus">
+
+    </div> -->
+
+
+    <div id="gameStatus" class="alert alert-dark" role="alert">
+        <h1>Waiting for player 2...</h1>
+    </div>
+<!-- <body onresize="fontfitter()"> -->
+    <!-- <center class="hii"> -->
+
+         <!-- <div id="container"> -->
+
+        <center><h1 id="header"></h1></center>
+
+
+            <div class="ddvdd">
+                <img id="back_board" src="/Assets/back board.png" alt="">
             </div>
-            <div id="credits">
-                <h5 id="creditsH5">Credits</h5>
+    <!-- </center> -->
+    <!-- <center class="hi"> -->
+        <!-- <div class="dddd"> -->
+
+            <div id="flexbox-container1" >
+                <div  class="dd">
+                    <img id="circle14" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle14"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle13" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle13"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle12" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle12"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle11" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle11"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle10" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle10"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle9" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle9"></div>
+                </div>
+
+                <div  class="dd">
+                    <img id="circle8" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle8"></div>
+                </div>
             </div>
-            
-        </div>    
 
-        
-        <!-- <button type="button" class="btn btn-primary btn-lg">Large button</button> -->
-        <!-- </div> --> 
+            <div id="flexbox-container2" >
+                <div class="d">
+                    <img id="circle1" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle1"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle2" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle2"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle3" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle3"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle4" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle4"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle5" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle5"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle6" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle6"></div>
+                </div>
+
+                <div class="d">
+                    <img id="circle7" draggable="false" class="circle" src=" /Assets/circle full2.png" alt="">
+                    <div id="divCircle7"></div>
+                </div>
+            </div>
+        <!-- </div> -->
+    <!-- </center> -->
+        <!-- </div>    -->
+                <!-- <img id="circle" class="circle" src=" /Assets/circle full2.png" alt=""> -->
+
+            <center id="condftainer">
+                <svg id="Player1">
+                    <text class="t" x="2%" y="60%"> </text>
+                </svg>
+                <svg id="Player1Gems">
+                    <text class="t" x="2%" y="60%"> </text>
+                </svg>
+                <!-- <svg id="Gamestatus">
+                    <text class="t" x="0" y="50"> </text>
+                </svg> -->
+                <!-- <span id="Player1"></span>
+                <span id="Player2"></span>
+                <span id="Gamestatus"></span> -->
+            </center>
+
+            <center id="condftainer2">
+                <!-- <svg id="Gamestatus2">
+                    <text class="t" x="0" y="50"> </text>
+                </svg> -->
+                <svg id="Player2">
+                    <text class="t" x="2%" y="60%"> </text>
+                </svg>
+                <svg id="Player2Gems">
+                    <text class="t" x="2%" y="60%"> </text>
+                </svg>
+
+                <!-- <span id="Player1"></span>
+                <span id="Player2"></span>
+                <span id="Gamestatus"></span> -->
+            </center>
+
+<div id="rematchdiv"><button onclick="rematch()" id="rematch">Rematch?</button></div>
+
+
+
+<!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+<script src="https://48npr6ll-3000.euw.devtunnels.ms/socket.io/socket.io.js"></script>
+<script src="multiplayer.js"></script>
+
+</body>
+
+<Div>
+
+</Div>
 
 
 
 
-
-
-            <script>
-
-                document.getElementById("singleplayerBtn").addEventListener("click", redirectFunction1);
-            
-                function redirectFunction1(){
-                    window.location.href = "/singleplayer";
-                }
-
-                document.getElementById("multiplayerBtn").addEventListener("click", redirectFunction2);
-            
-                function redirectFunction2(){
-                    window.location.href = "/multiplayer";
-                }
-                            
-            </script>
-
-
-
-
-
-
-        
-    </body>
 </html>

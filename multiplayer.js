@@ -1,9 +1,15 @@
-var socket = io("https://v9djdb27-3000.euw.devtunnels.ms/");
+var socket = io("https://48npr6ll-3000.euw.devtunnels.ms/");
 
 // var playerIsFlipped;
 var chosen_circlee;
+var statee;
 // window.addEventListener("resize", fontfitter);
-
+document.addEventListener('pointerdown', function(event) {
+  if (statee.result.status == Statuses.WAITING) {
+    console.log("Waiting")
+    event.preventDefault();
+  }
+});
 
 
 
@@ -624,6 +630,7 @@ socket.on("gameState", function(state) {
   console.log(state)
   console.log(state.slotBoard)
   console.log(slotsValues)
+  statee = state
   // try {
     // if (state.flippedPlayer.id == socket.id) {
     //   playerIsFlipped = true
@@ -637,7 +644,7 @@ socket.on("gameState", function(state) {
     if (state.flippedPlayer.id == socket.id) {
       var elements = document.getElementsByClassName("d");
       for (var i = 0; i < elements.length; i++) {
-        elements[i].parentElement.style.background = "brown";
+        // elements[i].parentElement.style.background = "brown";
         elements[i].addEventListener("click", function() {
       console.log("KKR")
           someFunction(this);
@@ -645,29 +652,32 @@ socket.on("gameState", function(state) {
       }
 
 
-      var elements = document.getElementsByClassName("dd");
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].parentElement.style.background = "beige";
-      }
+      // var elements = document.getElementsByClassName("dd");
+      // for (var i = 0; i < elements.length; i++) {
+      //   elements[i].parentElement.style.background = "bisque";
+      // }
 
     } else {
       var elements = document.getElementsByClassName("dd");
       for (var i = 0; i < elements.length; i++) {
-        elements[i].parentElement.style.background = "beige";
+        // elements[i].parentElement.style.background = "bisque";
         elements[i].addEventListener("click", function() {
           console.log("OP")
           someFunction(this);
         });
       }
 
-      var elements = document.getElementsByClassName("d");
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].parentElement.style.background = "brown";
-      }
+      // var elements = document.getElementsByClassName("d");
+      // for (var i = 0; i < elements.length; i++) {
+      //   elements[i].parentElement.style.background = "brown";
+      // }
 
     }
 
   } catch (e) {}  
+
+
+  
   // slotsValues = state.slotBoard
   // for (let index = 0; index < state.board.length; index++) {
   //   const player = state.board[index];
@@ -756,26 +766,57 @@ socket.on("gameState", function(state) {
   // }
 
 
-  document.getElementById("Gamestatus").children[0].innerHTML = " ";
+  // document.getElementById("Gamestatus").children[0].innerHTML = " ";
   switch (state.result.status) {
     case Statuses.WAITING:
-      document.getElementById("Gamestatus").children[0].innerHTML = "Waiting for players....";
+      // document.getElementById("Gamestatus").children[0].innerHTML = "Waiting for players....";
+      document.getElementById("gameStatus").style.visibility = "visible";
+      document.getElementById("gameStatus").classList.add('fade-in');
+
       break;
     case Statuses.PLAYING:
-      document.getElementById("Gamestatus").children[0].innerHTML = state.currentPlayer.playerName + " to play";
+      // if (state.currentPlayer.id == state.flippedPlayer.id) {
+      //   document.querySelector('#condftainer').style.boxShadow = 'none';
+      //   document.querySelector('#condftainer2').style.boxShadow = '0 0 5px 5px rgba(255, 255, 0, 0.5)';        
+      // }
+      // else if (state.currentPlayer.id != state.flippedPlayer.id) {        
+      //   document.querySelector('#condftainer2').style.boxShadow = 'none';
+      //   document.querySelector('#condftainer').style.boxShadow = '0 0 5px 5px rgba(255, 255, 0, 0.5)';
+      // }
+
+      if (state.currentPlayer.id == state.flippedPlayer.id) {        
+        document.getElementById("condftainer").classList.remove('box');
+        document.getElementById("condftainer2").classList.add('box');       
+      }
+      else if (state.currentPlayer.id != state.flippedPlayer.id) {        
+        document.getElementById("condftainer2").classList.remove('box');
+        document.getElementById("condftainer").classList.add('box');  
+      }
+
+
+
+      
+      // document.getElementById("Gamestatus").children[0].innerHTML = state.currentPlayer.playerName + " to play";
+      // document.getElementById("gameStatus").style.visibility = "hidden";
+      document.getElementById("gameStatus").classList.remove('fade-in');
+      document.getElementById("gameStatus").classList.add('fade-out');
       break;
+//TODO: change gamestate to show on the grey background screen and also say that the game ended ------------------------------
+
     case Statuses.DRAW:
-      document.getElementById("Gamestatus").children[0].innerHTML = "Draw!";
+      // document.getElementById("Gamestatus").children[0].innerHTML = "Draw!";
       document.getElementById("rematch").style.visibility = "visible"
       canRematch = true
       break;
     case Statuses.WIN:
-      document.getElementById("Gamestatus").children[0].innerHTML = state.result.winner.playerName + " Wins!";
+      // document.getElementById("Gamestatus").children[0].innerHTML = state.result.winner.playerName + " Wins!";
       document.getElementById("rematch").style.visibility = "visible"
       canRematch = true
       break;
     default:
       break;
+
+//TODO ----------------------------------------------------------------------------------------------------------------------
   }
 
   document.getElementById("Player1").children[0].innerHTML = " ";

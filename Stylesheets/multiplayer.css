@@ -1,14 +1,20 @@
 
 html, body
 {
-    height: 100dvh;
-    width: 100dvw;
+    /* height: 100dvh;
+    width: 100dvw; */
     margin:0;
     padding:0;
 }
 
 
-
+:root {
+    --clr-1: #052b2f;
+    --clr-2: #073438;
+    --clr-3: #0e4b50;
+    --clr-4: #2d8f85;
+    --clr-5: #637c54;
+  }
 
 
 
@@ -30,7 +36,7 @@ html, body
     /* flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0; */
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin: auto;  
     /* z-index: 2; */
@@ -84,17 +90,101 @@ html, body
 
 #flexbox-container1{
     
-    width: 90%;
+    width: 83%;
     /* height: 15%; */
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
     position: absolute;
-    top: 50%;
+    top: 49.6%;
     left: 50%;
     transform: translate(-50%, -113%);
+    border-top-right-radius: 2dvw;
+    border-top-left-radius: 2dvw;
+    background-color: deepskyblue;
 }
+
+#gameStatus {
+    position: relative;
+    /* margin: auto; */
+    /* background: grey; */
+
+    box-shadow: rgb(161 159 157 / 98%) 0px 0px 0px 99999px;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#gameStatus > h1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* #condftainer {
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 0, 0.5);
+    transition: box-shadow 0.5s ease; 
+} */
+
+
+                                                                                        #condftainer2 {
+                                                                                            
+                                                                                            /* border: 2px solid transparent;
+                                                                                            box-shadow: 0 0 5px 5px rgba(255, 255, 0, 0.5);  */
+                                                                                            /* transition: box-shadow 0.5s ease;  */
+                                                                                        }
+/* .disabledItem {
+    pointer-events: none;
+} */
+
+
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-out {
+    opacity: 0;
+    animation: fadeOut 1s ease-in forwards;
+    animation: dissapear 1s;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes dissapear {
+    from {
+      visibility: visible;
+    }
+    to {
+      visibility: hidden;
+    }
+  }
+
+
+  /* .fade-out {
+    opacity: 0;
+    transition: opacity 1s
+  } */
 
 
 .d {
@@ -228,16 +318,19 @@ html, body
 
 #flexbox-container2{
     
-    width: 90%;
+    width: 83%;
     /* height: 15%; */
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
     position: absolute;
-    top: 50%;
+    top: 50.2%;
     left: 50%;
     transform: translate(-50%, 13%);
+    border-bottom-right-radius: 2dvw;
+    border-bottom-left-radius: 2dvw;
+    background-color: #2d8f85;
 }
 
 /* #flexbox-container2 div {
@@ -262,23 +355,40 @@ html, body
     position: absolute;
 } */
 
-#Gamestatus > text {
+/* #Gamestatus > text {
     transform: translateX(42%); 
-}
+} */
 
 #condftainer {
     position: absolute;
-    top: 0%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    height: 20%;
+    width: calc(20vw + 20vh);
+    /* height: 2dvh; */
     display: flex; 
     justify-content: center; 
     /* align-items: center; */
     flex-direction: column;
-    background-color: bisque;
+    /* background-color: deepskyblue; */
+    /* border-radius: 3px; */
+    aspect-ratio: 20 / 8;
 }
+
+
+
+
+
+#Player2, #Player1 {
+    border-top-right-radius: 0.7dvw;
+    border-top-left-radius: 0.7dvw;
+}
+
+#Player2Gems, #Player1Gems {
+    border-bottom-right-radius: 0.7dvw;
+    border-bottom-left-radius: 0.7dvw;
+}
+
 
 #condftainer > svg{
     /* min-width: max-content;
@@ -300,23 +410,147 @@ html, body
     max-height: max-content;
     display: block;
     width:100%;
+    background-color: deepskyblue;
     
 }
 
+/* #gameStatus {} */
 
 #condftainer2 {
     position: absolute;
-    bottom: 0%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    height: 20%;
+    width: calc(20vw + 20vh);
     display: flex; 
     justify-content: center; 
     /* align-items: center; */
     flex-direction: column;
-    background-color: brown;
+    /* background-color: #2d8f85; */
+    /* border-radius: 3px; */
+    border-radius: 0.7dvw;
+    aspect-ratio: 20 / 8;
 }
+
+
+
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #151320;
+} */
+
+
+
+.box::before,
+.box::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    border-radius: 0.7dvw;
+    background: conic-gradient(from var(--gradient-angle),
+        #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000,
+        #ff0055, #ff0000, #ffff00, #00ff00, #0099ff, #001aff, #a200ff
+    );
+    
+
+  animation: rotation 5s linear infinite;
+}
+
+.card::after {
+  filter: blur(9.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* 
+
+@media (min-width: 1200px) {
+    #condftainer {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #condftainer {
+        width: 20%;
+    }
+}
+
+@media (min-width: 1550px) {
+    #condftainer {
+        width: 15%;
+    }
+}
+
+@media (min-width: 1700px) {
+    #condftainer {
+        width: 10%;
+    }
+}
+
+@media (max-width: 1000px) {
+    #condftainer {
+        width: 33%;
+    }
+}
+
+@media (max-width: 800px) {
+    #condftainer {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    #condftainer {
+        width: 55%;
+    }
+}
+
+
+
+
+@media (max-height: 500px) {
+    #condftainer {
+        width: 20%;
+    }
+}
+
+@media (max-height: 440px) {
+    #condftainer {
+        width: 14%;
+    }
+} */
+
+
 
 #condftainer2 > svg{
     /* min-width: max-content;
@@ -338,18 +572,35 @@ html, body
     max-height: max-content;
     display: block;
     width:100%;
+    background-color: #2d8f85;
     
 }
+
 
 
 .t{
     height: 100%;
     width:100%;
-    font-size: 50px;
+    font-size: calc(2vw + 2vh);
     padding-top: 5px;
     padding-bottom: 5px;
     
 }
+
+
+@media screen and (min-width: 1200px) {
+    #condftainer, #condftainer2 {
+      width: calc(12vw + 12vh); 
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .t {
+      font-size: calc(1.5vw + 1vh); 
+    }
+  }
+
+
 
 /* #Gamestatus {
     width: 100%;
@@ -358,19 +609,9 @@ html, body
 
 
 
-@media (max-height: 868px) {
-    #condftainer {
-        height: 25%;
-        /* width: 175%; */
-    }
-}
 
-@media (max-height: 576px) {
-    #condftainer {
-        height: 15%;
-        /* width:15%; */
-    }
-}
+
+/*  */
 
 .d {
     padding-left: 1% !important; 
