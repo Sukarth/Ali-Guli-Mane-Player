@@ -28,4 +28,7 @@ The server code for this game is located in another repository. The code is also
 ### The game's client
 
   The client code for this game is stored in this repository. It is hosted at this url: [Alu Guli Mane Client](https://alu-guli-mane-player.onrender.com/).
-  
+
+## Troubleshooting
+
+Both the server and the client codes are hosted on a platfrom called [Render](https://render.com/). The client is always running on the hosted url because it is a static site. However, the server runs as a web service, and according to Render's free plan 'will spin down with inactivity, which can delay requests by 50 seconds or more'. This can cause problems with the client sometimes, and cause it to stop working, since the server might not respond to any requests for 50 seconds or more. However, this problem should only occur if requests were not sent to the server in a long time, and it was 'spinned down'. This can happen for example if it has been a long time since anybody opened and played the game/client. A soulution to this problem is to wait around a minute until the client finished loading (it will only finish loading once the server is up) and responds by showing a popup asking for your name. If that doesn't work, then reloading the page is also an option, as it could fix any network problems.
