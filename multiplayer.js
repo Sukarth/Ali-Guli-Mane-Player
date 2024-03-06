@@ -677,6 +677,11 @@ socket.on("gameState", function(state) {
   } catch (e) {}  
 
 
+
+  for (var key in state.slotBoard) {
+    slotsValues[key] = state.slotBoard[key];
+  }
+
   
   // slotsValues = state.slotBoard
   // for (let index = 0; index < state.board.length; index++) {
@@ -771,7 +776,10 @@ socket.on("gameState", function(state) {
     case Statuses.WAITING:
       // document.getElementById("Gamestatus").children[0].innerHTML = "Waiting for players....";
       document.getElementById("gameStatus").style.visibility = "visible";
+      document.getElementById("gameStatus").classList.remove('fade-out');
       document.getElementById("gameStatus").classList.add('fade-in');
+      document.getElementById("condftainer").classList.remove('box');
+      document.getElementById("condftainer2").classList.remove('box');
 
       break;
     case Statuses.PLAYING:
@@ -816,20 +824,29 @@ socket.on("gameState", function(state) {
     default:
       break;
 
-//TODO ----------------------------------------------------------------------------------------------------------------------
+ //TODO ----------------------------------------------------------------------------------------------------------------------
   }
 
   document.getElementById("Player1").children[0].innerHTML = " ";
   document.getElementById("Player2").children[0].innerHTML = " ";
-  if (state.players.length > 0) {
+  document.getElementById("Player1Gems").children[0].innerHTML = " ";
+  document.getElementById("Player2Gems").children[0].innerHTML = " ";
+  if (state.players.length == 1) {
     document.getElementById("Player1").children[0].innerHTML = "Player 1: " + state.players[0].playerName;
     document.getElementById("Player1Gems").children[0].innerHTML = 'Player 1 Gems: ' + state.players[0].numberOfGems;
+    // document.getElementById("Player2").children[0].innerHTML = " ";
   }
 
-  if (state.players.length > 1) {
+  if (state.players.length == 2) {
+    document.getElementById("Player1").children[0].innerHTML = "Player 1: " + state.players[0].playerName;
+    document.getElementById("Player1Gems").children[0].innerHTML = 'Player 1 Gems: ' + state.players[0].numberOfGems;
     document.getElementById("Player2").children[0].innerHTML = "Player 2: " + state.players[1].playerName;
     document.getElementById("Player2Gems").children[0].innerHTML = 'Player 2 Gems: ' + state.players[1].numberOfGems;
   }
+
+  // if (state.result.status == Statuses.WAITING) {
+  //   document.getElementById("Player2").children[1].innerHTML = " ";
+  // }
 
 
 
