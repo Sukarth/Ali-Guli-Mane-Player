@@ -1,4 +1,5 @@
 var socket = io("https://alu-guli-mane-game-server.onrender.com/");
+// var socket = io("https://bcz88mvk-10000.euw.devtunnels.ms/");
 
 // var playerIsFlipped;
 var chosen_circlee;
