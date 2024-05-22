@@ -1,6 +1,6 @@
-# Alu Guli Mane
+# Ali Guli Mane
 
-An online multiplayer version of the traditional South Indian board game Alu Guli Mane.
+An online multiplayer version of the traditional South Indian board game Ali Guli Mane.
 
 
 
@@ -23,11 +23,11 @@ The code of this game is split into 2 parts:
 
 The server code for this game is located in another repository. The code is also hosted on a different url to the client code.
 
-  The url for the repository to view the server code for this game: [Alu Guli Mane Server](https://github.com/Sukarth/Alu-Guli-Mane-Server/)
+  The url for the repository to view the server code for this game: [Ali Guli Mane Server](https://github.com/Sukarth/Alu-Guli-Mane-Server/)
 
 ### The game's client
 
-  The client code for this game is stored in this repository. It is hosted at this url: [Alu Guli Mane Client](https://alu-guli-mane-player.onrender.com/).
+  The client code for this game is stored in this repository. It is hosted at this url: [Ali Guli Mane Client](https://alu-guli-mane-player.onrender.com/).
 
 ## Troubleshooting
 
